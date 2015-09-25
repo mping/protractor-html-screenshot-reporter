@@ -53,6 +53,7 @@ function defaultMetaDataBuilder(spec, descriptions, results, capabilities) {
 				, version: capabilities.caps_.version
 			}
 		};
+/*
 	if(results.items_.length > 0) {
 		var result = results.items_[0];
 		if(!results.passed()){
@@ -61,7 +62,9 @@ function defaultMetaDataBuilder(spec, descriptions, results, capabilities) {
 				metaData.message = failedItem.message || 'Failed';
 				metaData.trace = failedItem.trace? (failedItem.trace.stack || 'No Stack trace information') : 'No Stack trace information';
 			}
-
+                }
+        }
+*/
 	if(passed.length > 0 || failed.length > 0) {
 		var result = passed[0];
 
@@ -255,6 +258,7 @@ function reportSpecResults(spec) {
 		finishReport();
 
 	}
+}
 
 ScreenshotReporter.prototype.specDone = function (spec) {
     //console.log("##test[testFinished name='" + (spec.description) + "']");
